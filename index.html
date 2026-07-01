@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>実験用 食堂サイト</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>実験用 食堂サイト</h1>
+    <p class="lead">本日の気分でメニューを選んでください。</p>
+
+    <section class="card">
+      <h2>メニュー投票</h2>
+      <form id="vote-form">
+        <label><input type="radio" name="menu" value="カレー" required /> カレー</label>
+        <label><input type="radio" name="menu" value="ラーメン" /> ラーメン</label>
+        <label><input type="radio" name="menu" value="定食" /> 定食</label>
+        <label><input type="radio" name="menu" value="うどん" /> うどん</label>
+        <button type="submit">投票する</button>
+      </form>
+      <p id="result" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <h2>ランダム提案</h2>
+      <button id="suggest-btn">今日のおすすめを出す</button>
+      <p id="suggest-result" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
