@@ -3,32 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>実験用 食堂サイト</title>
+  <meta name="description" content="実験用食堂投票システム" />
+  <title>実験用 食堂メニュー投票</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="container">
-    <h1>実験用 食堂サイト</h1>
-    <p class="lead">本日の気分でメニューを選んでください。</p>
+  <header>
+    <h1>🍱 食堂メニュー投票システム</h1>
+    <p class="subtitle">本日のメニューに投票してください</p>
+  </header>
 
-    <section class="card">
-      <h2>メニュー投票</h2>
+  <main class="container">
+    <!-- メニュー投票セクション -->
+    <section class="card card--primary">
+      <h2>📝 メニュー投票</h2>
       <form id="vote-form">
-        <label><input type="radio" name="menu" value="カレー" required /> カレー</label>
-        <label><input type="radio" name="menu" value="ラーメン" /> ラーメン</label>
-        <label><input type="radio" name="menu" value="定食" /> 定食</label>
-        <label><input type="radio" name="menu" value="うどん" /> うどん</label>
-        <button type="submit">投票する</button>
+        <div class="menu-options">
+          <label class="option">
+            <input type="radio" name="menu" value="カレー" required />
+            <span class="option-label">🍛 カレー</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="menu" value="ラーメン" />
+            <span class="option-label">🍜 ラーメン</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="menu" value="定食" />
+            <span class="option-label">🍚 定食</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="menu" value="うどん" />
+            <span class="option-label">🍲 うどん</span>
+          </label>
+        </div>
+        <button type="submit" class="btn btn--primary">投票する</button>
       </form>
-      <p id="result" aria-live="polite"></p>
+      <p id="result" class="result" aria-live="polite"></p>
     </section>
 
+    <!-- 投票結果集計セクション -->
     <section class="card">
-      <h2>ランダム提案</h2>
-      <button id="suggest-btn">今日のおすすめを出す</button>
-      <p id="suggest-result" aria-live="polite"></p>
+      <h2>📊 投票結果</h2>
+      <div id="results-container" class="results-container">
+        <p class="placeholder">投票がまだありません</p>
+      </div>
+      <button id="reset-btn" class="btn btn--secondary btn--small">リセット</button>
+    </section>
+
+    <!-- ランダム提案セクション -->
+    <section class="card">
+      <h2>🎲 ランダム提案</h2>
+      <p class="description">決めきれない時はこちら</p>
+      <button id="suggest-btn" class="btn btn--accent">今日のおすすめを出す</button>
+      <p id="suggest-result" class="suggest-result" aria-live="polite"></p>
     </section>
   </main>
+
+  <footer>
+    <p>&copy; 2026 実験用食堂投票システム</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
